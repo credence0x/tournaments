@@ -3,8 +3,8 @@ version = 1
 
 [[package]]
 name = "alexandria_bytes"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 dependencies = [
  "alexandria_data_structures",
  "alexandria_math",
@@ -12,13 +12,13 @@ dependencies = [
 
 [[package]]
 name = "alexandria_data_structures"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 
 [[package]]
 name = "alexandria_encoding"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 dependencies = [
  "alexandria_bytes",
  "alexandria_data_structures",
@@ -28,13 +28,13 @@ dependencies = [
 
 [[package]]
 name = "alexandria_math"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 
 [[package]]
 name = "alexandria_numeric"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 dependencies = [
  "alexandria_math",
  "alexandria_searching",
@@ -42,8 +42,8 @@ dependencies = [
 
 [[package]]
 name = "alexandria_searching"
-version = "0.3.0"
-source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.3.0#e3715428c990665afc495b5428ef08ab9a2089cd"
+version = "0.5.2"
+source = "git+https://github.com/keep-starknet-strange/alexandria.git?tag=v0.5.2#2fa8b3e12e31f58216b7d890c3d9094da9e6fcff"
 dependencies = [
  "alexandria_data_structures",
 ]
@@ -54,6 +54,7 @@ version = "0.0.1"
 dependencies = [
  "dojo",
  "dojo_cairo_test",
+ "dojo_macros",
  "game_components_metagame",
  "game_components_minigame",
  "game_components_test_starknet",
@@ -65,29 +66,29 @@ dependencies = [
 
 [[package]]
 name = "dojo"
-version = "1.6.2"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.6.2#d6e847c51ecd0121a43c2a17b96dbca936604764"
+version = "1.6.0-alpha.1"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
 dependencies = [
- "dojo_plugin",
+ "dojo_macros",
 ]
 
 [[package]]
 name = "dojo_cairo_test"
-version = "1.6.2"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.6.2#d6e847c51ecd0121a43c2a17b96dbca936604764"
+version = "1.6.0-alpha.1"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
 dependencies = [
  "dojo",
 ]
 
 [[package]]
-name = "dojo_plugin"
-version = "2.10.1"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.6.2#d6e847c51ecd0121a43c2a17b96dbca936604764"
+name = "dojo_macros"
+version = "1.6.0-alpha.1"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
 
 [[package]]
 name = "game_components_metagame"
 version = "1.5.1"
-source = "git+https://github.com/Provable-Games/game-components?tag=0.0.9#937ae141c61b8bfdfce417507683d070f92e6de6"
+source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
 dependencies = [
  "game_components_minigame",
  "game_components_token",
@@ -99,7 +100,7 @@ dependencies = [
 [[package]]
 name = "game_components_minigame"
 version = "1.5.1"
-source = "git+https://github.com/Provable-Games/game-components?tag=0.0.9#937ae141c61b8bfdfce417507683d070f92e6de6"
+source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
 dependencies = [
  "game_components_metagame",
  "game_components_token",
@@ -111,7 +112,7 @@ dependencies = [
 [[package]]
 name = "game_components_test_starknet"
 version = "1.5.1"
-source = "git+https://github.com/Provable-Games/game-components?tag=0.0.9#937ae141c61b8bfdfce417507683d070f92e6de6"
+source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
 dependencies = [
  "game_components_metagame",
  "game_components_minigame",
@@ -124,7 +125,7 @@ dependencies = [
 [[package]]
 name = "game_components_token"
 version = "1.5.1"
-source = "git+https://github.com/Provable-Games/game-components?tag=0.0.9#937ae141c61b8bfdfce417507683d070f92e6de6"
+source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
 dependencies = [
  "game_components_metagame",
  "game_components_minigame",
@@ -137,7 +138,7 @@ dependencies = [
 [[package]]
 name = "game_components_utils"
 version = "1.5.1"
-source = "git+https://github.com/Provable-Games/game-components?tag=0.0.9#937ae141c61b8bfdfce417507683d070f92e6de6"
+source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
 dependencies = [
  "alexandria_encoding",
  "game_components_metagame",
@@ -153,19 +154,18 @@ source = "git+https://github.com/ponderingdemocritus/graffiti?rev=bc569531791dbc
 
 [[package]]
 name = "openzeppelin_access"
-version = "1.0.0"
+version = "2.0.0"
 source = "registry+https://scarbs.xyz/"
-checksum = "sha256:a39a4ea1582916c637bf7e3aee0832c3fe1ea3a3e39191955e8dc39d08327f9b"
+checksum = "sha256:511681dd26d814ee2bc996d44ff8cb4aaa5ae9d14272130def7eb901cf004850"
 dependencies = [
  "openzeppelin_introspection",
- "openzeppelin_utils",
 ]
 
 [[package]]
 name = "openzeppelin_account"
-version = "1.0.0"
+version = "2.0.0"
 source = "registry+https://scarbs.xyz/"
-checksum = "sha256:7e943a2de32ddca4d48e467e52790e380ab1f49c4daddbbbc4634dd930d0243f"
+checksum = "sha256:fb3381c50d68b028d3801feb43df378e2bd62137b6884844f8f60aefe796188b"
 dependencies = [
  "openzeppelin_introspection",
  "openzeppelin_utils",
@@ -173,15 +173,15 @@ dependencies = [
 
 [[package]]
 name = "openzeppelin_introspection"
-version = "1.0.0"
+version = "2.0.0"
 source = "registry+https://scarbs.xyz/"
-checksum = "sha256:34e088ecf19e0b3012481a29f1fbb20e600540cb9a5db1c3002a97ebb7f5a32a"
+checksum = "sha256:87773ed6cd2318f169283ecbbb161890d1996260a80302d81ec45b70ee5e54c1"
 
 [[package]]
 name = "openzeppelin_token"
-version = "1.0.0"
+version = "2.0.0"
 source = "registry+https://scarbs.xyz/"
-checksum = "sha256:33fcb84a1a76d2d3fff9302094ff564f78d45b743548fd7568c130b272473f66"
+checksum = "sha256:6fe61f63b5a6706018265fb7373b6e5bd3ff829bdc760b2b90296b1e708d180c"
 dependencies = [
  "openzeppelin_access",
  "openzeppelin_account",
@@ -191,6 +191,6 @@ dependencies = [
 
 [[package]]
 name = "openzeppelin_utils"
-version = "1.0.0"
+version = "2.0.0"
 source = "registry+https://scarbs.xyz/"
-checksum = "sha256:fd348b31c4a4407add33adc3c2b8f26dca71dbd7431faaf726168f37a91db0c1"
+checksum = "sha256:bf799c794139837f397975ffdf6a7ed5032d198bbf70e87a8f44f144a9dfc505"

@@ -2,9 +2,21 @@
 
 use starknet::ContractAddress;
 use budokan::models::schedule::Schedule;
+use core::num::traits::Zero;
+
+pub impl ContractAddressDefaultImpl of Default<ContractAddress> {
+    fn default() -> ContractAddress {
+        Zero::zero()
+    }
+}
+
+pub impl SpanU64DefaultImpl of Default<Span<u64>> {
+    fn default() -> Span<u64> {
+        array![].span()
+    }
+}
 
 #[dojo::model]
-#[derive(Drop, Serde)]
 pub struct Tournament {
     #[key]
     pub id: u64,
@@ -18,20 +30,20 @@ pub struct Tournament {
     pub entry_requirement: Option<EntryRequirement>,
 }
 
-#[derive(Drop, Serde, Introspect)]
+#[derive(Drop, Serde, Introspect, DojoStore)]
 pub struct Metadata {
     pub name: felt252,
     pub description: ByteArray,
 }
 
-#[derive(Copy, Drop, Serde, Introspect)]
+#[derive(Copy, Drop, Serde, Introspect, DojoStore)]
 pub struct GameConfig {
     pub address: ContractAddress,
     pub settings_id: u32,
     pub prize_spots: u8,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Introspect, DojoStore)]
 pub struct EntryFee {
     pub token_address: ContractAddress,
     pub amount: u128,
@@ -40,14 +52,15 @@ pub struct EntryFee {
     pub game_creator_share: Option<u8>,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Introspect, DojoStore)]
 pub struct EntryRequirement {
     pub entry_limit: u8,
     pub entry_requirement_type: EntryRequirementType,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Default, DojoStore, Introspect)]
 pub enum EntryRequirementType {
+    #[default]
     token: ContractAddress,
     tournament: TournamentType,
     allowlist: Span<ContractAddress>,
@@ -63,36 +76,39 @@ pub struct QualificationEntries {
     pub entry_count: u8,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Default, DojoStore, Introspect)]
 pub enum TournamentType {
+    #[default]
     winners: Span<u64>,
     participants: Span<u64>,
 }
 
-#[derive(Copy, Drop, Serde, Introspect)]
+#[derive(Copy, Drop, Serde, Introspect, Default, DojoStore)]
 pub struct ERC20Data {
     pub amount: u128,
 }
 
-#[derive(Copy, Drop, Serde, Introspect)]
+#[derive(Copy, Drop, Serde, Introspect, DojoStore)]
 pub struct ERC721Data {
     pub id: u128,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Default, DojoStore, Introspect)]
 pub enum TokenType {
+    #[default]
     erc20,
     erc721,
 }
 
-#[derive(Copy, Drop, Serde, Introspect)]
+#[derive(Copy, Drop, Serde, Introspect, DojoStore)]
 pub struct TokenData {
     pub token_address: ContractAddress,
     pub token_type: TokenType,
 }
 
-#[derive(Copy, Drop, Serde, Introspect)]
+#[derive(Copy, Drop, Serde, Default, Introspect, DojoStore)]
 pub enum TokenTypeData {
+    #[default]
     erc20: ERC20Data,
     erc721: ERC721Data,
 }
@@ -192,36 +208,39 @@ pub struct PrizeClaim {
     pub claimed: bool,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, DojoStore, Default, Introspect)]
 pub enum Role {
+    #[default]
     TournamentCreator,
     GameCreator,
     Position: u8,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, DojoStore, Default, Introspect)]
 pub enum PrizeType {
+    #[default]
     EntryFees: Role,
     Sponsored: u64,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, DojoStore, Default, Introspect)]
 pub enum QualificationProof {
     // For qualifying via previous tournament
+    #[default]
     Tournament: TournamentQualification,
     // For qualifying via NFT ownership
     NFT: NFTQualification,
     Address: ContractAddress,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Introspect, DojoStore, Default)]
 pub struct TournamentQualification {
     pub tournament_id: u64,
     pub token_id: u64,
     pub position: u8,
 }
 
-#[derive(Copy, Drop, Serde, PartialEq, Introspect)]
+#[derive(Copy, Drop, Serde, PartialEq, Introspect, DojoStore)]
 pub struct NFTQualification {
     pub token_id: u256,
 }
