@@ -66,29 +66,29 @@ dependencies = [
 
 [[package]]
 name = "dojo"
-version = "1.6.0-alpha.1"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
+version = "1.7.0-alpha.2"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.2#a064752fff355f325cf0b00828d236b399333432"
 dependencies = [
  "dojo_macros",
 ]
 
 [[package]]
 name = "dojo_cairo_test"
-version = "1.6.0-alpha.1"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
+version = "1.7.0-alpha.2"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.2#a064752fff355f325cf0b00828d236b399333432"
 dependencies = [
  "dojo",
 ]
 
 [[package]]
 name = "dojo_macros"
-version = "1.6.0-alpha.1"
-source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.1#67aeb9f49c6b8c30b1850badd065c9192617c3b2"
+version = "1.7.0-alpha.2"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.7.0-alpha.2#a064752fff355f325cf0b00828d236b399333432"
 
 [[package]]
 name = "game_components_metagame"
 version = "1.5.1"
-source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
+source = "git+https://github.com/credence0x/game-components#842ad6134a5fcaa1c6a2136384287f9b090edd59"
 dependencies = [
  "game_components_minigame",
  "game_components_token",
@@ -100,7 +100,7 @@ dependencies = [
 [[package]]
 name = "game_components_minigame"
 version = "1.5.1"
-source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
+source = "git+https://github.com/credence0x/game-components#842ad6134a5fcaa1c6a2136384287f9b090edd59"
 dependencies = [
  "game_components_metagame",
  "game_components_token",
@@ -112,7 +112,7 @@ dependencies = [
 [[package]]
 name = "game_components_test_starknet"
 version = "1.5.1"
-source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
+source = "git+https://github.com/credence0x/game-components#842ad6134a5fcaa1c6a2136384287f9b090edd59"
 dependencies = [
  "game_components_metagame",
  "game_components_minigame",
@@ -125,7 +125,7 @@ dependencies = [
 [[package]]
 name = "game_components_token"
 version = "1.5.1"
-source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
+source = "git+https://github.com/credence0x/game-components#842ad6134a5fcaa1c6a2136384287f9b090edd59"
 dependencies = [
  "game_components_metagame",
  "game_components_minigame",
@@ -138,7 +138,7 @@ dependencies = [
 [[package]]
 name = "game_components_utils"
 version = "1.5.1"
-source = "git+https://github.com/credence0x/game-components#8011edc28ec5aff8e4cfd71bd2cbb459141d6f1a"
+source = "git+https://github.com/credence0x/game-components#842ad6134a5fcaa1c6a2136384287f9b090edd59"
 dependencies = [
  "alexandria_encoding",
  "game_components_metagame",
